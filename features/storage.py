@@ -41,7 +41,7 @@ def save_json(filename, data):
 
     ## If filename exists
     ### Load already existing data
-    tasks: list = load_json(filename)
+    tasks = load_json(filename)
     new_tasks = tasks.append(data)
     with open(filename, "w") as f:
         json.dump(new_tasks, f)
