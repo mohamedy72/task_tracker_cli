@@ -39,9 +39,6 @@ def save_json(filename, data):
     if not path.exists():
         raise FileNotFoundError("File not found. Please check any typos or run `task-cli init`")
 
-    ## If filename exists
-    ### Load already existing data
-    tasks = load_json(filename)
-    new_tasks = tasks.append(data)
+    ## If filename exists, write to it
     with open(filename, "w") as f:
-        json.dump(new_tasks, f)
+        json.dump(data, f)
