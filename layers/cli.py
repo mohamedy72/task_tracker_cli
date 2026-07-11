@@ -19,7 +19,8 @@ def cli():
 
     # Update a task by its ID
     update = subparser.add_parser("update", help="Update a task by ID")
-    update.add_argument("update_task", metavar="updated_task")
+    update.add_argument("id", metavar="id_to_update")
+    update.add_argument("new_task", metavar="new_task")
 
     # Delete a task by its ID
     delete = subparser.add_parser("delete", help="Delete a task by ID")
