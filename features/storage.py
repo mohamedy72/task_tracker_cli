@@ -1,7 +1,6 @@
 """
 A module that contains storage functionality ( init, save and load ) using JSON file
 """
-
 import json
 from pathlib import Path
 
