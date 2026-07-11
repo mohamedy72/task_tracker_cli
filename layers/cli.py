@@ -3,28 +3,33 @@ Module contains CLI arguments and optional options
 """
 import argparse
 
-
 def cli():
     # Create a new Parser
     parser = argparse.ArgumentParser(prog='tasks-cli', description="CLI tool to manage tasks ( Add, Update, List and Delete tasks) ", epilog="Thanks for using %(prog)s! :)")
 
-    # Add task argument group
-    add = parser.add_argument_group("Add tasks commands:")
-    add.add_argument("add")
+    # File to work on, must come before every command/action
+    parser.add_argument("--file", help="Initialize the JSON storage file")
 
-    # Update and Delete argument group
-    modifying = parser.add_argument_group("Updating and Deleting by ID commands:")
-    modifying.add_argument("update")
-    modifying.add_argument("delete")
+    ## Add subparser and subcommands
+    subparser = parser.add_subparsers(dest="action", title="Actions", help="Actions for various operations on tasks")
 
-    # List tasks argument group
-    listing = parser.add_argument_group("Listing all and by status commands:")
-    ## List all for now
-    listing.add_argument("list")
-    ## TODO: List by status
+    # Add task to a tasks list
+    add = subparser.add_parser("add", help="Add new task to a tasks list")
+    add.add_argument("task", metavar="task")
 
-    # Marking tasks argument group. Subcommands for List
-    ## TODO
+    # Update a task by its ID
+    update = subparser.add_parser("update", help="Update a task by ID")
+    update.add_argument("update_task", metavar="updated_task")
+
+    # Delete a task by its ID
+    delete = subparser.add_parser("delete", help="Delete a task by ID")
+    delete.add_argument("delete_task", metavar="deleted_task")
+
+    # List all tasks
+    subparser.add_parser("list", help="List all tasks")
+    ## TODO: Add optional filters ( todo, done, in-progress )
+
+    # TODO: Marking a task as (mark-in-progress | mark-done ) by its ID
 
     args = parser.parse_args()
 
