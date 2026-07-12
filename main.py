@@ -1,6 +1,7 @@
 from pathlib import Path
 from features.delete_task import delete_task
 from features.list_tasks import list_tasks
+from features.mark_task import change_status
 from layers.cli import cli
 from features.storage import init_json, load_json, save_json
 from features.add_task import add_task
@@ -24,6 +25,11 @@ def main():
         tasks = delete_task(int(args.delete_task), tasks)
     elif args.action == "list":
         list_tasks(tasks)
+    elif args.action == "mark-in-progress":
+        change_status(int(args.id),tasks, "mark-in-progress")
+    elif args.action == "mark-done":
+        change_status(int(args.id),tasks, "mark-done")
+
 
     save_json(path, tasks)
 
