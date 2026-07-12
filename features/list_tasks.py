@@ -3,11 +3,13 @@ A module that contains funcionality about listing tasks (all, done, not done, in
 """
 
 
-def list_tasks(tasks: list):
+def list_tasks(tasks: list, status: str = "todo"):
     if not tasks:
         print("No tasks found, add new tasks to view them")
 
-    for task in tasks:
+    filtered_tasks = list(filter(lambda item: item["status"] == status, tasks))
+
+    for task in filtered_tasks:
         print(f"""
         Task ID: {task["id"]}
         Description: {task["description"]}
