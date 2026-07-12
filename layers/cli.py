@@ -27,8 +27,9 @@ def cli():
     delete.add_argument("delete_task", metavar="deleted_task")
 
     # List all tasks
-    subparser.add_parser("list", help="List all tasks")
-    ## TODO: Add optional filters ( todo, done, in-progress )
+    list = subparser.add_parser("list", help="List all tasks")
+    ## Add filters ( todo, done, in-progress )
+    list.add_argument("status")
 
     # TODO: Marking a task as (mark-in-progress | mark-done ) by its ID
     mark_in_progress = subparser.add_parser("mark-in-progress", help="Mark a task as in-progress")
