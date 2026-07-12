@@ -31,6 +31,11 @@ def cli():
     ## TODO: Add optional filters ( todo, done, in-progress )
 
     # TODO: Marking a task as (mark-in-progress | mark-done ) by its ID
+    mark_in_progress = subparser.add_parser("mark-in-progress", help="Mark a task as in-progress")
+    mark_in_progress.add_argument("id")
+
+    mark_done = subparser.add_parser("mark-done", help="Mark a task as done")
+    mark_done.add_argument("id")
 
     args = parser.parse_args()
 
