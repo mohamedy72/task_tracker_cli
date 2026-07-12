@@ -3,7 +3,6 @@ Module to implement task deletion
 """
 
 def delete_task(id: int, tasks: list):
-    for task in tasks:
-        if task["id"] == id:
-            del task
-    return f"Task with ID {id} is deleted successfully"
+    new_tasks = list(filter(lambda x: x.get("id") != id, tasks))
+    print(f"Task with ID {id} is deleted successfully")
+    return new_tasks

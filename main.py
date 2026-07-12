@@ -21,7 +21,7 @@ def main():
     elif args.action == "update":
         update_task(int(args.id), args.new_task, tasks)
     elif args.action == "delete":
-        delete_task(int(args.delete_task), tasks)
+        tasks = delete_task(int(args.delete_task), tasks)
     elif args.action == "list":
         list_tasks(tasks)
 
