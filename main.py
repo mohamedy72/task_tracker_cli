@@ -24,7 +24,7 @@ def main():
     elif args.action == "delete":
         tasks = delete_task(int(args.delete_task), tasks)
     elif args.action == "list":
-        list_tasks(tasks)
+        list_tasks(tasks, args.status)
     elif args.action == "mark-in-progress":
         change_status(int(args.id),tasks, "mark-in-progress")
     elif args.action == "mark-done":
