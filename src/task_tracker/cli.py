@@ -17,7 +17,7 @@ def main():
     parser = argparse.ArgumentParser(prog='tasks-cli', description="CLI tool to manage tasks ( Add, Update, List and Delete tasks) ", epilog="Thanks for using %(prog)s! :)")
 
     # File to work on, must come before every command/action
-    parser.add_argument("--file", help="Initialize the JSON storage file")
+    parser.add_argument("--file", default="tasks.json",help="Initialize the JSON storage file")
 
     ## Add subparser and subcommands
     subparser = parser.add_subparsers(dest="action", title="Actions", help="Actions for various operations on tasks")
