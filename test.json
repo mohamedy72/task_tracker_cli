@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "description": "First task",
+    "status": "todo",
+    "createdAt": "2026-07-12 12:25:17.338645",
+    "updatedAt": "2026-07-12 12:25:17.338667"
+  },
+  {
+    "id": 2,
+    "description": "second",
+    "status": "todo",
+    "createdAt": "2026-07-12 12:25:21.921225",
+    "updatedAt": "2026-07-12 12:25:40.211102"
+  }
+]

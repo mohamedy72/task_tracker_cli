@@ -10,5 +10,5 @@ def update_task(id: int, new_task: str, tasks: list):
     for task in tasks:
         if task["id"] == id:
             task["description"] = new_task
-            task["updatedAt"] = datetime.now()
+            task["updatedAt"] = str(datetime.now())
             return f"Task with ID {id} updated successfully"
