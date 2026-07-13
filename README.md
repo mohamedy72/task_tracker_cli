@@ -32,9 +32,11 @@ The application is build with:
 To run the app locally:
 
 ```bash
-git clone git@github.com:mohamedy72/task_tracker_cli.git
-cd task_tracker_cli
-uv sync
+# Using uv  (Recommended)
+uv tool install git+https://github.com/mohamedy72/task_tracker_cli
+
+# Or using Pip
+pip install git+https://github.com/mohamedy72/task_tracker_cli
 ```
 
 ## 🚀 Usage
@@ -44,7 +46,6 @@ Here is how to use the app
 ```bash
 # Adding a new task
 tasks-cli add "Buy groceries"
-
 
 # Updating and deleting tasks
 tasks-cli update 1 "Buy groceries and cook dinner"
